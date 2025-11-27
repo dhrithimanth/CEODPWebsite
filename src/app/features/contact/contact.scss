@@ -1,0 +1,99 @@
+.contact-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+
+    .container {
+        max-width: 800px; // Narrower container for form
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 24px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #4b5563;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    .contact-form {
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+
+            @media (max-width: 640px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #1f2937;
+            background-color: #f9fafb;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+
+            &::placeholder {
+                color: #6b7280;
+            }
+
+            &:focus {
+                outline: none;
+                border-color: #003366;
+                box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+                background-color: white;
+            }
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 24px;
+
+            &:hover {
+                background-color: #002244;
+            }
+        }
+    }
+}

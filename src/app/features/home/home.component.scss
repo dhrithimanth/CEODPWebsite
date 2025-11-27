@@ -1,0 +1,258 @@
+@import '../../../styles.scss';
+
+.home-container {
+    overflow-x: hidden;
+}
+
+.hero-section {
+    padding: $spacing-xxl 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+
+    .container {
+        max-width: $wide;
+        margin: 0 auto;
+        padding: 0 $spacing-lg;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacing-xl;
+
+        @include mobile {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .hero-content {
+        flex: 1;
+        max-width: 600px;
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: $primary-color;
+            margin-bottom: $spacing-md;
+            font-family: $font-family-display;
+
+            .highlight {
+                color: $accent-color;
+                position: relative;
+                display: inline-block;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 4px;
+                    left: 0;
+                    width: 100%;
+                    height: 8px;
+                    background-color: rgba($accent-color, 0.2);
+                    z-index: -1;
+                }
+            }
+
+            @include mobile {
+                font-size: 36px;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: lighten($text-color, 20%);
+            margin-bottom: $spacing-xl;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: $spacing-md;
+
+            @include mobile {
+                justify-content: center;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                font-size: 16px;
+
+                &.btn-primary {
+                    background-color: $primary-color;
+                    color: white;
+                    box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 16px rgba($primary-color, 0.4);
+                    }
+                }
+
+                &.btn-outline {
+                    border: 2px solid $primary-color;
+                    color: $primary-color;
+
+                    &:hover {
+                        background-color: rgba($primary-color, 0.05);
+                    }
+                }
+            }
+        }
+    }
+
+    .hero-visual {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .hero-placeholder {
+            width: 400px;
+            height: 400px;
+            position: relative;
+
+            // Simple CSS Orbit Animation Placeholder
+            .orbit-system {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .planet {
+                    width: 80px;
+                    height: 80px;
+                    background: $primary-color;
+                    border-radius: 50%;
+                    box-shadow: 0 0 40px rgba($primary-color, 0.4);
+                    z-index: 10;
+                }
+
+                .orbit {
+                    position: absolute;
+                    border: 1px solid rgba($primary-color, 0.2);
+                    border-radius: 50%;
+
+                    &.orbit-1 {
+                        width: 160px;
+                        height: 160px;
+                        animation: spin 10s linear infinite;
+                    }
+
+                    &.orbit-2 {
+                        width: 240px;
+                        height: 240px;
+                        animation: spin 15s linear infinite reverse;
+                    }
+
+                    &.orbit-3 {
+                        width: 320px;
+                        height: 320px;
+                        animation: spin 20s linear infinite;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -6px;
+                        width: 12px;
+                        height: 12px;
+                        background: $accent-color;
+                        border-radius: 50%;
+                        box-shadow: 0 0 10px $accent-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.features-preview {
+    padding: $spacing-xxl 0;
+    background-color: white;
+
+    .container {
+        max-width: $wide;
+        margin: 0 auto;
+        padding: 0 $spacing-lg;
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+        }
+
+        .feature-card {
+            padding: 32px;
+            border-radius: 12px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            }
+
+            .icon-box {
+                width: 60px;
+                height: 60px;
+                background: transparent !important;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 24px;
+
+                .icon-text {
+                    font-family: 'Times New Roman', serif;
+                    font-size: 24px;
+                    color: #003366;
+                    font-style: normal !important;
+                }
+            }
+
+            h3 {
+                font-family: 'Times New Roman', serif;
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin-bottom: 16px;
+                color: #111827;
+            }
+
+            p {
+                color: #4b5563;
+                line-height: 1.6;
+                font-size: 0.95rem;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
