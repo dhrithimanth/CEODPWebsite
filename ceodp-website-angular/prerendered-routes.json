@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "/": {},
+    "/about": {},
+    "/architecture": {},
+    "/contact": {},
+    "/news": {},
+    "/product-suite": {},
+    "/testimonials": {},
+    "/why-ceodp": {}
+  }
+}
